@@ -243,14 +243,14 @@ class UserController extends Controller
     public function editarusuario(Request $request)
     {
         $arrays = [
-            0 => 'nome',
+            0 => 'name',
             1 => 'genero',
             2 => 'nascimento',
             3 => 'estado',
             4 => 'cidade',
         ];
         $arrays_dados = [
-            'nome' => '',
+            'name' => '',
             'genero' => '',
             'nascimento' => '',
             'estado' => '',
@@ -305,6 +305,7 @@ class UserController extends Controller
         $estado = $estado['nome'];
         $user->cidade = $cidade;
         $user->estado = $estado;
+        
         $user->save();
         // if($request->post('insta') == Auth::user()->insta){
         //     $instagram = $this->buscaInsta($request->post('insta'));

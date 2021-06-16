@@ -19,11 +19,11 @@ $estado_bd = Auth::user()->estado;
         @csrf
         <div class="form-group col-sm-6">
           <label for="Nome" class="col-form-label">Nome</label>
-          <input type="text" id="nome" disabled name="Nome" value="{{Auth::user()->name}}" class="form-control">
+          <input type="text" id="nome" disabled name="name" value="{{Auth::user()->name}}" class="form-control"/>
         </div>
         <div class="form-group col-sm-6">
-          <label for="Nome" class="col-form-label">Email</label>
-          <input type="text" disabled name="email" value="{{Auth::user()->email}}" class="form-control">
+          <label for="email" class="col-form-label">Email</label>
+          <input id="email" type="text" disabled name="email" value="{{Auth::user()->email}}" class="form-control">
         </div>
         <div class="form-group col-sm-3">
           <label for="genero" class="col-form-label">genero</label>
@@ -41,14 +41,14 @@ $estado_bd = Auth::user()->estado;
         <div class="form-group col-sm-3">
           <label for="estado" class="col-form-label">Estado</label>
           <select class="custom-select form-control" name="estado" id="estado" disabled required>
-            <option value="{{Auth::user()->estado}}"  selected='selected'>{{Auth::user()->estado}}</option>
+            <!-- <option value="{{Auth::user()->estado}}"  selected='selected'>{{Auth::user()->estado}}</option> -->
           </select>
           <!-- <input type="text" value="{{Auth::user()->estado}}" disabled name="estado"  class="form-control"> -->
         </div>
         <div class="form-group col-sm-3">
           <label for="cidade" class="col-form-label">Cidade</label>
           <select class="custom-select form-control" name="cidade" id="cidade" disabled required>
-            <option value="{{Auth::user()->cidade}}" selected='selected'>{{Auth::user()->cidade}}</option>
+            <!-- <option value="{{Auth::user()->cidade}}" selected='selected'>{{Auth::user()->cidade}}</option> -->
           </select>
           <!-- <input type="text" value="{{Auth::user()->estado}}" disabled name="cidade"  class="form-control"> -->
         </div>
