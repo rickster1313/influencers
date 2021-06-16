@@ -33,6 +33,9 @@
         <div class="tab-pane fade" id="list-politica" role="tabpanel" aria-labelledby="list-politica-list">
             Politicas de dados
         </div>
+        <div class="tab-pane fade" id="list-newpropostas" role="tabpanel" aria-labelledby="list-propostas-list">
+            @include('includes.list-newpropostas')
+        </div>
       </div>
     </div>
   </div>

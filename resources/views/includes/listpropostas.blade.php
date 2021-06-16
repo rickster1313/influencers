@@ -3,7 +3,7 @@
       Propostas para mim
     </div>
     <div class="card-body card-mypropostas">
-        @if ($propostas != "[]")
+        @if (count($propostas) > 0)
             @foreach ($propostas as $item)  
                 <div class="quadro-proposta">
                     <p class="titulo-proposta">{{$item["titulo"]}}</p>

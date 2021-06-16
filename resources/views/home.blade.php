@@ -7,14 +7,17 @@
 @include('includes.header')
 <section class="container apresentacao">
     <div class="row">
+
+
         <div class="col-sm apresentacao-left">
             <h3>GANHE COM SUAS REDES SOCIAIS!</h3>
             <div class="container-img-left"> 
                 <img class="img-fluid" src="{{ asset('assets/images/img300.jpg') }}" alt="">
             </div>
         </div>
+
         <div class="col-sm apresentacao-right">
-            <h3>São dezenas de empresas buscando pessoas como você!</h3>
+            <h3>São d ezenas de empresas buscando pessoas como você!</h3>
             <div class="container-img-right">
                 <img class="img-fluid" src="{{ asset('assets/images/img200.jpg') }}" alt="">
                 <img class="img-fluid" src="{{ asset('assets/images/img200.jpg') }}" alt="">

@@ -200,7 +200,6 @@ $j(document).ready(function(){
     });
     $j("#estado").on("change", function(){
         selecionado = $j(this).val();
-        
         $j("#cidade").html('<option value="" disabled selected>Cidade</option>');
         $j.each(estados[selecionado].cidades, function(i, item) {
             $j("#cidade").append('<option value="'+i+'">'+item+'</option>');
@@ -211,7 +210,7 @@ $j(document).ready(function(){
         e.preventDefault();
     });
     $j("#add_tag").on("click",function(){
-        tag = $j("#tags").val().trim().toLowerCase();
+        var tag = $j("#tags").val().trim().toLowerCase();
         if(tag.length > 1){
             if(tags == null){
                 tags = [tag];
@@ -225,7 +224,7 @@ $j(document).ready(function(){
         }  
     });
    $j(".list-tag").on("click",".delete-tag",function(){
-        id = $j(this).data("id");
+       var id = $j(this).data("id");
         tags.splice(id,1);
         loadTags();
    });

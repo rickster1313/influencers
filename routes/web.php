@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +24,9 @@ Route::get("/logout",[UserController::class, 'sair']);
 Route::get("/locations",[UserController::class, 'locs']);
 Route::get("/loadinsta/{user}",[UserController::class, 'buscaInsta']);
 Route::post("/completeInfluencer",[UserController::class, 'completarInfluencer']);
-Route::post("/completeEmpresario",[UserController::class, 'completarEmpresario']);
+Route::post("/)",[UserController::class, 'completarEmpresario']);
 Route::post("/novaproposta",[UserController::class, 'newproposta']);
 Route::get("/cadastro-usuario",[UserController::class, 'selectUser']);
 Route::get("/select/{id?}",[UserController::class, 'select']);
+Route::post('/altUser', [UserController::class, 'editarusuario']);
+Route::post('/altEmp', [UserController::class, 'editarempresario']);
