@@ -36,7 +36,7 @@ class UserController extends Controller
                     }
                 }
                 $minhaPropostas = array();
-                foreach ($allpropostas as $key => $value) {
+                foreach ($allpropostas as $key => $value) {        
                     //filtro de tags
                     $tags = explode("|", $value['tags']);
                     $filtroTags = 0;
@@ -53,7 +53,7 @@ class UserController extends Controller
                     if ($filtroTags === 0) {
                         continue;
                     }
-
+                    
                     //filtro de seguidores
                     if ($value['num_follows'] > Auth::user()->follows) {
                         continue;
@@ -128,9 +128,10 @@ class UserController extends Controller
                     if ($filtroIdade === 0) {
                         continue;
                     }
+                    
                     array_push($minhaPropostas, $allpropostas[$key]);
-                }
-                return view("dashboard-influ", ['propostas' => $minhaPropostas]);
+                    }
+                    return view("dashboard-influ", ['propostas' => $minhaPropostas, 'allpropostas'=>$allpropostas]);
             }
         } elseif (Auth::user()->user_id === 2) {
             if (Auth::user()->nome_marca == null) {

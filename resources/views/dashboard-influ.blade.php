@@ -36,6 +36,9 @@
         <div class="tab-pane fade" id="list-newpropostas" role="tabpanel" aria-labelledby="list-propostas-list">
             @include('includes.list-newpropostas')
         </div>
+        <div class="tab-pane fade" id="view-propostas" role="tabpanel" aria-labelledby="list-propostas-list">
+            @include('includes.view-propostas')
+        </div>
       </div>
     </div>
   </div>
