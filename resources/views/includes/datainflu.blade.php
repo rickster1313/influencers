@@ -23,7 +23,9 @@ $estado_bd = Auth::user()->estado;
         </div>
         <div class="form-group col-sm-6">
           <label for="email" class="col-form-label">Email</label>
-          <input id="email" type="text" disabled name="email" value="{{Auth::user()->email}}" class="form-control">
+          <div class="form-control">
+            {{Auth::user()->email}}
+          </div>
         </div>
         <div class="form-group col-sm-3">
           <label for="genero" class="col-form-label">genero</label>

@@ -1,1 +1,1 @@
-<h1>Criar proposta</h1>
+{{$propostas}}

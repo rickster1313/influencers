@@ -37,7 +37,6 @@ class UserController extends Controller
                 }
                 $minhaPropostas = array();
                 foreach ($allpropostas as $key => $value) {
-
                     //filtro de tags
                     $tags = explode("|", $value['tags']);
                     $filtroTags = 0;
