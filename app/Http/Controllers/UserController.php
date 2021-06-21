@@ -36,7 +36,7 @@ class UserController extends Controller
                     }
                 }
                 $minhaPropostas = array();
-                foreach ($allpropostas as $key => $value) {        
+                foreach ($allpropostas as $key => $value) {
                     //filtro de tags
                     $tags = explode("|", $value['tags']);
                     $filtroTags = 0;
@@ -53,7 +53,7 @@ class UserController extends Controller
                     if ($filtroTags === 0) {
                         continue;
                     }
-                    
+
                     //filtro de seguidores
                     if ($value['num_follows'] > Auth::user()->follows) {
                         continue;
@@ -128,10 +128,10 @@ class UserController extends Controller
                     if ($filtroIdade === 0) {
                         continue;
                     }
-                    
+
                     array_push($minhaPropostas, $allpropostas[$key]);
-                    }
-                    return view("dashboard-influ", ['propostas' => $minhaPropostas, 'allpropostas'=>$allpropostas]);
+                }
+                return view("dashboard-influ", ['propostas' => $minhaPropostas, 'allpropostas' => $allpropostas]);
             }
         } elseif (Auth::user()->user_id === 2) {
             if (Auth::user()->nome_marca == null) {
@@ -270,20 +270,21 @@ class UserController extends Controller
                 $user->$varia = $request->post($varia);
             }
         }
-        if ($request->post('insta') != Auth::user()->insta) {
+        //instagram
+        if (($request->post('insta') != Auth::user()->insta)) {
             $instagram = $this->buscaInsta($request->post('insta'));
             $instagram = json_decode($instagram, true);
-            $seguidor = $instagram['seguidores'];
-            $user->insta = $request->post("insta");
-            $user->follows = $seguidor;
+            if ($instagram['seguidores']) {
+                $seguidor = $instagram['seguidores'];
+                $user->insta = $request->post("insta");
+                $user->follows = $seguidor;
+            }
         }
         //verifica as tags
         $tags = $request->post('tags');
         $tags = explode(',', $tags);
-        //$tags = str_replace(',', '|', $request->post('tags'));
         $tags_bd = Auth::user()->tags;
         $tags_bd = explode('|', $tags_bd);
-        //$tags_bd = str_replace(',', '|', $tags_bd);
         for ($i = 0; $i < count($tags); $i++) {
             $thisTag = $tags[$i];
             for ($j = 0; $j < count($tags_bd); $j++) {
@@ -305,34 +306,8 @@ class UserController extends Controller
         $estado = $estado['nome'];
         $user->cidade = $cidade;
         $user->estado = $estado;
-        
         $user->save();
-        // if($request->post('insta') == Auth::user()->insta){
-        //     $instagram = $this->buscaInsta($request->post('insta'));
-        //     $instagram = json_decode($instagram, true);
-        //     $seguidor = $instagram['seguidores'];
-        // }
-        // $estado = $request->post('estado');
-        // $cidade = $request->post('cidade');
-        // $getEstados = $this->getEstados();
-        // $estado = $getEstados['estados'][$estado];
-        // $cidade = $estado['cidades'][$cidade];
-        // $estado = $estado['nome'];
-        // if ($instagram['status'] != 'erro'):
-        //     $tags = $request->post('tags');
-        //     $tags = str_replace(',', '|', $tags);
-        //     $user = User::find(Auth::id());
-        //     $user->name = $request->post('Nome');
-        //     $user->genero = $request->post("genero");
-        //     $user->nascimento = $request->post("data_nasc");
-        //     $user->estado = $estado;
-        //     $user->cidade = $cidade;
-        //     $user->tags = $tags;
-        //     $user->insta = $request->post("insta");
-        //     $user->follows = $seguidor;
-        //     $user->save();
         return redirect()->route('dashboard');
-        // endif;
     }
     public function editarempresario(Request $request)
     {

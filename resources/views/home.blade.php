@@ -7,24 +7,19 @@
 @include('includes.header')
 <section class="container apresentacao">
     <div class="row">
-
-
         <div class="col-sm apresentacao-left">
             <h3>GANHE COM SUAS REDES SOCIAIS!</h3>
             <div class="container-img-left"> 
                 <img class="img-fluid" src="{{ asset('assets/images/img300.jpg') }}" alt="">
             </div>
         </div>
-
         <div class="col-sm apresentacao-right">
-            <h3>São d ezenas de empresas buscando pessoas como você!</h3>
+            <h3>São dezenas de empresas buscando pessoas como você!</h3>
             <div class="container-img-right">
-                <img class="img-fluid" src="{{ asset('assets/images/img200.jpg') }}" alt="">
-                <img class="img-fluid" src="{{ asset('assets/images/img200.jpg') }}" alt="">
-                <img class="img-fluid" src="{{ asset('assets/images/img200.jpg') }}" alt="">
+                <img class="img-fluid" src="{{ asset('assets/images/img200.jpg') }}" alt=""/>
+                <img class="img-fluid" src="{{ asset('assets/images/img200.jpg') }}" alt=""/>
+                <img class="img-fluid" src="{{ asset('assets/images/img200.jpg') }}" alt=""/>
             </div>
-            
-
         </div>
     </div>
 </section>
@@ -46,7 +41,6 @@
             <div class="linha" id="id32"><span class="name-cicle" id="nm-influ">Influenciador</span><div><i class="icofont-boy"></i><i class="icofont-girl"></i></div></div>
             <div class="linha" id="id33"><i class="icofont-reply"></i></div>
         </div>
-        
     </div>
 </section>
 <section class="container funciona">
@@ -79,7 +73,6 @@
         <p>Você que define! Pode ser em troca de produtos, dinheiro, descontos e mais!</p>
         </div>
     </div>
-    
 </section>
 <footer>
     <div class="container">
