@@ -19,6 +19,5 @@
                 <button class="btn btn-primary sem-props-btn" id="list-newpropostas-list" data-toggle="list" href="#list-newpropostas" role="tab" aria-controls="newpropostas">Criar proposta</button>
             </div>
         @endif
-        
     </div>
 </div>

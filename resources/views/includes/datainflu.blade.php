@@ -76,3 +76,4 @@ $estado_bd = Auth::user()->estado;
   </div>
 </div>
 <script src="{{ asset('assets/js/script2.js')}}" type="text/javascript"></script>
+<script src="{{ asset('assets/js/script4.js')}} " type="text/javascript"></script>
